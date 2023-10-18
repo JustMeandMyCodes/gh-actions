@@ -22,7 +22,7 @@ jobs:
         run: ./hello.sh
   goodbye:
     runs-on: ${{ defaults.runs-on }}
-      steps:
+    steps:
       - name: checkout repo
         uses: actions/checkout@v4.1.1
       - name: hello
