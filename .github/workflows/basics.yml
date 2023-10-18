@@ -21,17 +21,15 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v4.1.1
-      - name: hello
+   #   - name: checkout repo
+   #     uses: actions/checkout@v4.1.1
+      - name: say hello
         run: |
           chmod +x hello.sh
           ./hello.sh
   goodbye:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v4.1.1
-      - name: hello
+      - name: say goodbye
         run: echo "bye ${{ github.event.inputs.First-Name }} {{ github.event.inputs.Last-Name }}"
   
