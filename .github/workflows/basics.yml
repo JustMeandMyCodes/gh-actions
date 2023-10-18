@@ -1,0 +1,30 @@
+name: simple echo
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+defaults:
+  runs-on: ubuntu-latest
+
+jobs:
+  hello:
+    runs-on: ${{ defaults.runs-on }}
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4.1.1
+      - name: hello
+        run: ./hello.sh
+  goodbye:
+    runs-on: ${{ defaults.runs-on }}
+      steps:
+      - name: checkout repo
+        uses: actions/checkout@v4.1.1
+      - name: hello
+        run: echo "helloooooo"
+  
