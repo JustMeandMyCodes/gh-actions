@@ -11,7 +11,7 @@ on:
     inputs:
       First-Name:
         description: your firstname 
-        required: true
+        required: false
       Last-Name: 
         description: your lastname 
         required: false
@@ -24,7 +24,9 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v4.1.1
       - name: hello
-        run: ./hello.sh
+        run: |
+          chmod +x hello.sh
+          ./hello.sh
   goodbye:
     runs-on: ubuntu-latest
     steps:
