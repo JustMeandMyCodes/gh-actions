@@ -31,5 +31,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: say goodbye
-        run: echo "bye ${{ github.event.inputs.First-Name }} {{ github.event.inputs.Last-Name }}"
+        run: echo "bye ${{ github.event.inputs.First-Name }} ${{ github.event.inputs.Last-Name }}"
   
