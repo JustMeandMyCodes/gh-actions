@@ -8,23 +8,28 @@ on:
     branches:
       - main
   workflow_dispatch:
-
-defaults:
-  runs-on: ubuntu-latest
-
+    inputs:
+      First-Name:
+        description: your firstname 
+        required: true
+      Last-Name: 
+        description: your lastname 
+        required: false
+        default: Nobody
+        
 jobs:
   hello:
-    runs-on: ${{ defaults.runs-on }}
+    runs-on: ubuntu-latest
     steps:
       - name: checkout repo
         uses: actions/checkout@v4.1.1
       - name: hello
         run: ./hello.sh
   goodbye:
-    runs-on: ${{ defaults.runs-on }}
+    runs-on: ubuntu-latest
     steps:
       - name: checkout repo
         uses: actions/checkout@v4.1.1
       - name: hello
-        run: echo "helloooooo"
+        run: echo "bye ${{ github.event.inputs.firstname }} {{ github.event.inputs.lastname }}"
   
